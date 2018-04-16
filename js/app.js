@@ -1,6 +1,6 @@
 import Profile from "./components/profile"
 import Feed from "./components/feed"
-import Friends from "./components/friends"
+import Friends from "./components/friends-list"
 
 class App extends React.Component {
   constructor(props) {

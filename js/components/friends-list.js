@@ -1,18 +1,22 @@
+import Friend from "./friend"
+
 const mainStyle = {
   backgroundColor: "white",
   border: "1px solid #EDEDED",
-  padding: 30,
+  padding: 15,
 }
 
-export default class Profile extends React.Component {
+export default class FriendsList extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div style={mainStyle}>
-        <h1>Friends</h1>
+      <div>
+        <Friend />
+        <Friend />
+        <Friend />
       </div>
     )
   }
