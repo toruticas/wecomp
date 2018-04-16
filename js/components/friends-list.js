@@ -14,9 +14,9 @@ export default class FriendsList extends React.Component {
   render() {
     return (
       <div>
-        <Friend />
-        <Friend />
-        <Friend />
+        {this.props.list.map(friend => (
+          <Friend info={friend}/>
+        ))}
       </div>
     )
   }

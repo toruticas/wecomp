@@ -15,30 +15,33 @@ export default class Feed extends React.Component {
       <div style={mainStyle}>
         <div className="row">
           <div className="col-4">
-            <img className="img-fluid" src="https://picsum.photos/300/300"/>
+            <img className="img-fluid" src={this.props.info.user.avatar}/>
           </div>
           <div className="col-8">
             <h4>
-              Full Name <small>@toruticas</small>
+              {this.props.info.user.full_name}
+              <small style={{ marginLeft: 5}}>
+                @{this.props.info.user.username}
+              </small>
             </h4>
 
             <p>
-              Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.
+              {this.props.info.description}
             </p>
           </div>
         </div>
-        <div className="row">
+        <div className="row" style={{ marginTop: 10 }}>
           <div className="col-4 text-center">
-            dd/mm/aaaa
+            {this.props.info.timestamp}
           </div>
           <div className="col-2">
-            L 123
+            L {this.props.info.likes}
           </div>
           <div className="col-2">
-            C 123
+            C {this.props.info.comments}
           </div>
           <div className="col-2">
-            S 123
+            S {this.props.info.shares}
           </div>
         </div>
       </div>

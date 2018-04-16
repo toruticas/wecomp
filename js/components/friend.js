@@ -14,11 +14,11 @@ export default class Friend extends React.Component {
     return (
       <div className="row" style={mainStyle}>
         <div className="col-5">
-          <img className="img-fluid" src="https://picsum.photos/300/300"/>
+          <img className="img-fluid" src={this.props.info.avatar}/>
         </div>
         <div className="col-7">
           <h5>
-            @toruticas
+            @{this.props.info.username}
           </h5>
         </div>
       </div>

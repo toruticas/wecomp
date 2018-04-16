@@ -1,10 +1,13 @@
 import Profile from "./components/profile"
 import Feed from "./components/feed"
 import Friends from "./components/friends-list"
+import data from "./data"
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = data;
   }
 
   render() {
@@ -12,19 +15,18 @@ class App extends React.Component {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-3">
-            <Profile/>
+            <Profile info={data.profile}/>
           </div>
           <div className="col-md-6">
-            <Feed/>
+            <Feed feed={data.feed}/>
           </div>
           <div className="col-md-3">
-            <Friends/>
+            <Friends list={data.friends_suggestions}/>
           </div>
         </div>
       </div>
     )
   }
-
 };
 
 ReactDOM.render(

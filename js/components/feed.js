@@ -8,9 +8,9 @@ export default class Feed extends React.Component {
   render() {
     return (
       <div>
-        <Tweet />
-        <Tweet />
-        <Tweet />
+        {this.props.feed.map(tweet =>
+          <Tweet info={tweet}/>
+        )}
       </div>
     )
   }
