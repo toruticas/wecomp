@@ -10,6 +10,14 @@ export default class Friend extends React.Component {
     super(props);
   }
 
+  follow = () => {
+    this.props.follow(this.props.info.id)
+  }
+
+  unfollow = () => {
+    this.props.unfollow(this.props.info.id)
+  }
+
   render() {
     return (
       <div className="row" style={mainStyle}>
@@ -20,6 +28,24 @@ export default class Friend extends React.Component {
           <h5>
             @{this.props.info.username}
           </h5>
+
+          {this.props.info.following ?
+            <button
+              className="btn btn-primary"
+              style={{ marginTop: 10 }}
+              onClick={this.unfollow}
+            >
+              - Unfollow
+            </button>
+          :
+            <button
+              className="btn btn-outline-primary"
+              style={{ marginTop: 10 }}
+              onClick={this.follow}
+            >
+              + Follow
+            </button>
+          }
         </div>
       </div>
     )

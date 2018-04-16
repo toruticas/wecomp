@@ -10,18 +10,54 @@ class App extends React.Component {
     this.state = data;
   }
 
+  follow = (friendId) => {
+    this.setState({
+      profile: {
+        ...this.state.profile,
+        following: this.state.profile.following + 1,
+      },
+      friends_suggestions: this.state.friends_suggestions.map(friend => {
+        if (friend.id === friendId) {
+          return { ...friend, following: true }
+        }
+
+        return friend
+      })
+    })
+  }
+
+  unfollow = (friendId) => {
+    this.setState({
+      profile: {
+        ...this.state.profile,
+        following: this.state.profile.following - 1,
+      },
+      friends_suggestions: this.state.friends_suggestions.map(friend => {
+        if (friend.id === friendId) {
+          return { ...friend, following: false }
+        }
+
+        return friend
+      })
+    })
+  }
+
   render() {
     return (
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-3">
-            <Profile info={data.profile}/>
+            <Profile info={this.state.profile}/>
           </div>
           <div className="col-md-6">
-            <Feed feed={data.feed}/>
+            <Feed feed={this.state.feed}/>
           </div>
           <div className="col-md-3">
-            <Friends list={data.friends_suggestions}/>
+            <Friends
+              list={this.state.friends_suggestions}
+              follow={this.follow}
+              unfollow={this.unfollow}
+            />
           </div>
         </div>
       </div>

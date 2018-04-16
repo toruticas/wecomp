@@ -9,18 +9,22 @@ export default {
   friends_suggestions: [{
     id: 10,
     username: "cachero",
+    following: false,
     avatar: "https://picsum.photos/300/300/?dkey=10"
   }, {
     id: 11,
     username: "lpaulistinha",
+    following: false,
     avatar: "https://picsum.photos/300/300/?dkey=11"
   }, {
     id: 12,
     username: "dark_drevon",
+    following: false,
     avatar: "https://picsum.photos/300/300/?dkey=12"
   }, {
     id: 13,
     username: "kharsek",
+    following: false,
     avatar: "https://picsum.photos/300/300/?dkey=13"
   }],
   feed: [{

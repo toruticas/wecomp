@@ -15,7 +15,7 @@ export default class FriendsList extends React.Component {
     return (
       <div>
         {this.props.list.map(friend => (
-          <Friend info={friend}/>
+          <Friend info={friend} follow={this.props.follow} unfollow={this.props.unfollow}/>
         ))}
       </div>
     )
